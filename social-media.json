@@ -1,0 +1,95 @@
+{
+  "note": "Extracted from bentownsend.com Drupal site. All social media links and icons preserved.",
+  "social_media": [
+    {
+      "name": "Drupal",
+      "url": "https://drupal.org/u/benjaminarthurt",
+      "icon": "media/drupal-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/drupal-32.png"
+    },
+    {
+      "name": "About.me",
+      "url": "https://about.me/ben.townsend",
+      "icon": "media/aboutme-32_0.png",
+      "original_icon_path": "/sites/default/files/inline-images/aboutme-32_0.png"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/benjaminarthurt",
+      "icon": "media/twitter-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/twitter-32.png"
+    },
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/benjaminarthurt",
+      "icon": "media/facebook-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/facebook-32.png"
+    },
+    {
+      "name": "Email",
+      "url": "https://bentownsend.com/contact",
+      "icon": "media/email-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/email-32.png"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/benjaminarthurt",
+      "icon": "media/github-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/github-32.png"
+    },
+    {
+      "name": "Google+",
+      "url": "https://plus.google.com/113930497785230092579",
+      "icon": "media/google-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/google-32.png"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/benjaminarthurt",
+      "icon": "media/linkedin-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/linkedin-32.png"
+    },
+    {
+      "name": "Pinterest",
+      "url": "https://www.pinterest.com/benak2x/",
+      "icon": "media/pinterest-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/pinterest-32.png"
+    },
+    {
+      "name": "Reddit",
+      "url": "https://www.reddit.com/user/benjaminarthurt",
+      "icon": "media/reddit-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/reddit-32.png"
+    },
+    {
+      "name": "RSS",
+      "url": "https://bentownsend.com/rss.xml",
+      "icon": "media/rss-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/rss-32.png"
+    },
+    {
+      "name": "Skype",
+      "url": "skype:benjaminarthurt?call",
+      "icon": "media/skype-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/skype-32.png"
+    },
+    {
+      "name": "Stack Exchange",
+      "url": "http://stackexchange.com/users/4848775/benjaminarthurt",
+      "icon": "media/stackoverflow-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/stackoverflow-32.png"
+    },
+    {
+      "name": "Vimeo",
+      "url": "https://vimeo.com/user36517865",
+      "icon": "media/vimeo-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/vimeo-32.png"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/user/MrBenjamintownsend",
+      "icon": "media/youtube-32.png",
+      "original_icon_path": "/sites/default/files/inline-images/youtube-32.png"
+    }
+  ]
+}
