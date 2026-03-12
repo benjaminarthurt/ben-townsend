@@ -1,0 +1,155 @@
+<footer class="site-footer">
+  <div class="container">
+    <!-- Footer content section -->
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Benjamin Townsend</h3>
+        <p>Software developer, consultant, and amateur radio enthusiast.</p>
+        <p><strong>Dispatch Dataworks LLC</strong><br>
+        <a href="mailto:hello@dispatchdataworks.com">hello@dispatchdataworks.com</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <ul class="social-icons" role="list">
+          <li><a href="https://github.com/benjaminarthurt" title="GitHub" target="_blank" rel="noopener noreferrer"><img src="/media/github-32.png" alt="GitHub" width="32" height="32"></a></li>
+          <li><a href="https://twitter.com/benjaminarthurt" title="Twitter" target="_blank" rel="noopener noreferrer"><img src="/media/twitter-32.png" alt="Twitter" width="32" height="32"></a></li>
+          <li><a href="https://www.linkedin.com/in/benjaminarthurt" title="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="/media/linkedin-32.png" alt="LinkedIn" width="32" height="32"></a></li>
+          <li><a href="https://www.youtube.com/user/MrBenjamintownsend" title="YouTube" target="_blank" rel="noopener noreferrer"><img src="/media/youtube-32.png" alt="YouTube" width="32" height="32"></a></li>
+          <li><a href="https://www.facebook.com/benjaminarthurt" title="Facebook" target="_blank" rel="noopener noreferrer"><img src="/media/facebook-32.png" alt="Facebook" width="32" height="32"></a></li>
+          <li><a href="https://www.reddit.com/user/benjaminarthurt" title="Reddit" target="_blank" rel="noopener noreferrer"><img src="/media/reddit-32.png" alt="Reddit" width="32" height="32"></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>More Links</h3>
+        <ul>
+          <li><a href="https://vimeo.com/user36517865" title="Vimeo" target="_blank" rel="noopener noreferrer">Vimeo</a></li>
+          <li><a href="https://www.pinterest.com/benak2x/" title="Pinterest" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+          <li><a href="https://drupal.org/u/benjaminarthurt" title="Drupal" target="_blank" rel="noopener noreferrer">Drupal</a></li>
+          <li><a href="http://stackexchange.com/users/4848775/benjaminarthurt" title="Stack Exchange" target="_blank" rel="noopener noreferrer">Stack Exchange</a></li>
+          <li><a href="https://about.me/ben.townsend" title="About.me" target="_blank" rel="noopener noreferrer">About.me</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2024–2026 Benjamin Townsend. Powered by <a href="https://github.com/benjaminarthurt/ben-townsend" target="_blank" rel="noopener noreferrer">static site generators</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CSS for footer (add to your main.css or style block) -->
+<style>
+.site-footer {
+  background-color: var(--color-text-primary, #2C3E50);
+  color: var(--color-text-inverse, #FFFFFF);
+  padding: 3rem 0 1.5rem;
+  margin-top: 4rem;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: var(--color-text-inverse, #FFFFFF);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.site-footer a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  display: inline-block;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.social-icons li a:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.social-icons img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .social-icons li a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social-icons img {
+    width: 28px;
+    height: 28px;
+  }
+}
+</style>
