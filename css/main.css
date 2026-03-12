@@ -265,93 +265,46 @@ section {
    Footer
    ============================================================ */
 .site-footer {
-  background-color: var(--color-text-primary, #2C3E50);
-  color: var(--color-text-inverse, #FFFFFF);
-  padding: 3rem 0 1.5rem;
-  margin-top: 4rem;
-  font-size: 0.95rem;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: 2rem 0;
+  margin-top: auto;
+  text-align: center;
+}
+
+.site-footer p {
+  margin-bottom: .5rem;
+  font-size: .9rem;
+  opacity: .9;
 }
 
 .site-footer a {
-  color: var(--color-text-inverse, #FFFFFF);
+  color: var(--color-border);
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .site-footer a:hover {
-  opacity: 0.8;
+  color: var(--color-text-inverse);
   text-decoration: underline;
+  opacity: 0.8;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+.site-footer a img {
+  margin: 0 0.25rem;
+  transition: transform 0.2s;
 }
 
-.footer-section h3 {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
+.site-footer a:hover img {
+  transform: scale(1.15);
 }
 
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-section ul li a {
-  display: inline-block;
-}
-
-.social-icons {
+.social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.social-icons li a {
-  display: inline-flex;
-  align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.social-icons li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.social-icons li a:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: 2px;
-}
-
-.social-icons img {
-  display: block;
-  width: 32px;
-  height: 32px;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1rem;
-  text-align: center;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  gap: 0.5rem;
+  padding: 0 1rem;
 }
 
 /* ============================================================
@@ -994,24 +947,7 @@ a[target="_blank"]::after {
     gap: .75rem;
   }
 
-  .site-footer {
-    padding: 2rem 0 1rem;
-  }
 
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .social-icons li a {
-    width: 36px;
-    height: 36px;
-  }
-
-  .social-icons img {
-    width: 28px;
-    height: 28px;
-  }
 }
 
 /* ============================================================
