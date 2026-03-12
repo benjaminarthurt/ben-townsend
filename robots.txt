@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bentownsend.com/sitemap.xml

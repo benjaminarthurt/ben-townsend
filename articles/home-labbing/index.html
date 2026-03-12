@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Labbing — Benjamin Townsend | Articles</title>
+  <meta name="description" content="Inside my home lab: Proxmox, Docker, TrueNAS, Nginx, Cloudflare Tunnel, Plex, Home Assistant, Frigate — a complete tour.">
+  <meta property="og:title" content="Home Labbing — Benjamin Townsend">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bentownsend.com/articles/home-labbing/">
+  <meta property="og:description" content="A comprehensive tour of my home lab setup — Proxmox, Docker, TrueNAS, Nginx, Plex, Home Assistant, and more.">
+  <link rel="canonical" href="https://bentownsend.com/articles/home-labbing/">
+  <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">Benjamin Townsend</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/cv/">CV</a></li>
+        <li><a href="/consulting/">Consulting</a></li>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/birds/">Birds</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <h1>Inside My Home Lab</h1>
+      <p class="page-subtitle">Proxmox, Docker, TrueNAS, and Everything In Between</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/articles/">Articles</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Home Labbing</span>
+      </div>
+
+      <div class="prose">
+        <div class="article-meta">
+          <time datetime="2024-05-19">May 19, 2024</time>
+          <span>by Benjamin Townsend</span>
+        </div>
+
+        <figure style="margin:1.5rem 0;">
+          <img src="../../media/video.png" alt="Home lab streaming setup screenshot" style="border-radius:6px; border:1px solid var(--color-border);">
+          <figcaption style="text-align:center; font-size:.85rem; color:var(--color-text-secondary); margin-top:.5rem;">Bird feeder live stream running via Restreamer in the home lab.</figcaption>
+        </figure>
+
+        <p>
+          Welcome to my home lab, a space dedicated to learning, experimentation, and a bit of fun.
+          What started as a curiosity has grown into a robust environment where I run various services
+          to support my consulting business and enjoy some entertainment on the side.
+        </p>
+        <p>
+          In this article I'll take you through the ins and outs of my home lab setup — from the hardware
+          I use to the network configuration, virtualization, containerization strategies, and beyond.
+          Whether you're interested in setting up your own home lab or just curious about mine, I hope
+          you'll find some valuable insights and maybe even some inspiration.
+        </p>
+
+        <h2>1. Hardware and Network Infrastructure</h2>
+
+        <h3>Hardware Details</h3>
+        <p>
+          My home lab is powered by five older Dell and HP desktop PCs, each equipped with Intel i5
+          processors and 12–16 GB of memory. These machines might not be the latest and greatest, but
+          they serve the purpose well. Each node has two 1 TB hard drives, providing ample storage for
+          the various VMs and containers I run. All five nodes run <strong>Proxmox</strong>, a powerful
+          virtualization platform that allows me to manage and deploy VMs and LXC containers efficiently.
+        </p>
+
+        <h3>Networking Setup</h3>
+        <p>A solid network foundation is crucial for any home lab. Here's a breakdown of the infrastructure:</p>
+        <ul>
+          <li><strong>Managed Switches:</strong> Netgear managed switches for seamless connectivity and traffic management. Three switches connected to the firewall using trunk ports that pass VLANs.</li>
+          <li><strong>POE Switch:</strong> Powers multiple POE cameras around the property and Raspberry PIs with POE hats used for monitoring projects.</li>
+          <li><strong>Meraki Go Firewall and APs:</strong> Provides robust remote monitoring and alerting. Considering a future swap to pfSense for greater configurability.</li>
+          <li><strong>VLAN Configuration:</strong> VLANs segregate personal, consulting, and public/untrusted devices, maintaining better security and performance across the network.</li>
+        </ul>
+
+        <h2>2. Virtualization and Containerization</h2>
+
+        <h3>Proxmox</h3>
+        <p>
+          Proxmox serves as the backbone of my virtualization environment, running on all five nodes.
+          This open-source platform allows me to manage and deploy virtual machines (VMs) and Linux
+          containers (LXC) efficiently. VMs are dedicated to specific tasks, while lightweight LXC
+          containers handle applications with lower resource requirements.
+        </p>
+
+        <h3>Docker and Portainer</h3>
+        <p>
+          Containerization is managed through Docker running inside LXC containers on Proxmox — allowing
+          for uniform manageability and easy migration between physical hardware. To simplify Docker
+          management I use <strong>Portainer</strong>, which provides a single-pane-of-glass view of all
+          containers with an intuitive web interface for monitoring, deploying, and maintaining services.
+        </p>
+
+        <h2>3. Storage Solutions</h2>
+
+        <h3>TrueNAS</h3>
+        <p>
+          TrueNAS is the cornerstone of my storage infrastructure. My setup uses a RAIDZ1 configuration
+          with three 4 TB disks, yielding just over 7 TB of usable space — a good balance between
+          redundancy and capacity.
+        </p>
+
+        <h3>Data Access Methods</h3>
+        <ul>
+          <li><strong>SMB Shares:</strong> Easy file access from Windows devices.</li>
+          <li><strong>NFS Shares:</strong> Efficient file sharing between Linux servers.</li>
+          <li><strong>NextCloud Integration:</strong> TrueNAS integrates with NextCloud (running on Nginx with a MySQL backend) for sync and remote access from anywhere.</li>
+        </ul>
+
+        <h2>4. Network and Security</h2>
+        <ul>
+          <li><strong>Nginx Proxy:</strong> Exposed on port 443, provides an extra layer of authentication and protection for services like NextCloud and Plex.</li>
+          <li><strong>Cloudflare Tunnel:</strong> Securely exposes HTTPS resources without revealing my public IP. Cloudflare's DDoS mitigation and WAF add extra security.</li>
+          <li><strong>Twingate:</strong> Zero-trust network access for remote connections to internal services.</li>
+          <li><strong>Wazuh:</strong> Comprehensive security monitoring providing real-time analysis and alerts for security issues across most services in the lab.</li>
+          <li><strong>Technitium DNS:</strong> Local DNS server enabling clean internal domain names and DNS-level ad/tracker blocking.</li>
+        </ul>
+
+        <h2>5. Media and Entertainment</h2>
+
+        <h3>Plex Media Server</h3>
+        <p>
+          Plex serves as the cornerstone of my media setup. All media files — movies, TV shows, music,
+          and photos — are stored on TrueNAS and streamed to any device on the network or remotely.
+          Physical media has been converted to digital format using HandBrake on Windows.
+        </p>
+
+        <h3>Restreamer</h3>
+        <p>
+          Restreamer enables live streaming from my property. I have a Reolink camera pointed at my
+          bird feeders, and Restreamer rebroadcasts that footage to my
+          <a href="https://live.bentownsend.com" target="_blank" rel="noopener noreferrer">public website</a>
+          and <a href="https://www.youtube.com/@MrBenjamintownsend/streams" target="_blank" rel="noopener noreferrer">YouTube Live channel</a>,
+          providing a window into the backyard wildlife.
+        </p>
+
+        <h2>6. Home Automation</h2>
+
+        <h3>Home Assistant</h3>
+        <p>
+          Home Assistant runs on an Atomic PI board inside a custom enclosure. It integrates with
+          numerous smart devices including smart bulbs, TVs, light switches, air conditioning units,
+          fans, furnaces, security cameras, garden moisture sensors, hose valves, door locks, and
+          garage doors. I subscribe to <strong>Nabu Casa</strong> for seamless, secure remote access
+          while supporting the Home Assistant developers.
+        </p>
+
+        <h3>Frigate and Reolink Cameras</h3>
+        <p>
+          Frigate processes video feeds from Reolink cameras using a Google Coral TPU for real-time
+          object detection. Integration with Home Assistant enables sophisticated automation:
+        </p>
+        <ul>
+          <li><strong>License Plate Detection:</strong> When Frigate detects my car in the driveway, it can trigger the garage door to open.</li>
+          <li><strong>Person Detection:</strong> Sends alerts and can trigger exterior lights when people are detected.</li>
+          <li><strong>Real-Time Alerts:</strong> Tailored notifications based on object type, reducing noise while keeping me informed of significant events.</li>
+        </ul>
+
+        <h2>Additional Services</h2>
+        <p>A few other notable services running in the lab:</p>
+        <ul>
+          <li><strong>n8n:</strong> Workflow automation platform for social media scheduling, data pipelines, and inter-service integrations.</li>
+          <li><strong>Uptime Kuma:</strong> Monitors all critical services and alerts me if anything goes offline.</li>
+          <li><strong>Mosquitto (MQTT):</strong> Message broker facilitating real-time data exchange between Frigate, Home Assistant, and IoT devices.</li>
+          <li><strong>BirdNET-Pi:</strong> AI-powered bird species identification via audio analysis — see the <a href="/articles/birdwatching-ai/">birdwatching article</a> for details.</li>
+        </ul>
+
+        <div class="tag-list">
+          <span class="tag">Home Lab</span>
+          <span class="tag">Proxmox</span>
+          <span class="tag">Docker</span>
+          <span class="tag">TrueNAS</span>
+          <span class="tag">Home Assistant</span>
+          <span class="tag">Plex</span>
+          <span class="tag">Networking</span>
+          <span class="tag">Cloudflare</span>
+          <span class="tag">Security</span>
+          <span class="tag">Self-Hosted</span>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--color-border);">
+        <a href="/articles/" class="btn btn-outline">← Back to Articles</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2024 Benjamin Townsend &mdash; <a href="mailto:hello@dispatchdataworks.com">hello@dispatchdataworks.com</a></p>
+    <p>
+      <a href="https://github.com/benjaminarthurt" rel="noopener">GitHub</a> &middot;
+      <a href="https://www.linkedin.com/in/benjamintownsend" rel="noopener">LinkedIn</a> &middot;
+      <a href="https://www.youtube.com/@MrBenjamintownsend" rel="noopener">YouTube</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>
