@@ -32,7 +32,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
+      - name: Fix absolute links for sub-path deployment
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          # When the site is deployed to a sub-path (e.g. /ben-townsend/ instead
+          # of the custom domain root), absolute href links like /about/ resolve
+          # to the wrong origin path and return 404. Rewrite them to include the
+          # base path so navigation works at both the default GitHub Pages URL
+          # and the custom domain (bentownsend.com).
+          if [ -n "$BASE_PATH" ] && [ "$BASE_PATH" != "/" ]; then
+            find . -name "*.html" \
+              ! -path "./.git/*" \
+              ! -path "./.github/*" \
+              -print0 | xargs -0 sed -i \
+              -e "s|href=\"/\([^\"]*\)\"|href=\"${BASE_PATH}/\1\"|g" \
+              -e "s|src=\"/\([^\"]*\)\"|src=\"${BASE_PATH}/\1\"|g"
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
