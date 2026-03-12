@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhancing Birdwatching with AI — Benjamin Townsend | Articles</title>
+  <meta name="description" content="How I combined a Reolink 4K camera, datarhei Restreamer, and BirdNET-Pi AI to create a live bird feeder stream with automated species identification.">
+  <meta property="og:title" content="Enhancing Birdwatching with AI Technology — Benjamin Townsend">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://bentownsend.com/articles/birdwatching-ai/">
+  <meta property="og:description" content="How I combined a Reolink 4K camera, datarhei Restreamer, and BirdNET-Pi to create a publicly accessible live bird feeder stream with AI-powered species identification.">
+  <link rel="canonical" href="https://bentownsend.com/articles/birdwatching-ai/">
+  <link rel="stylesheet" href="../../css/main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">Benjamin Townsend</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/cv/">CV</a></li>
+        <li><a href="/consulting/">Consulting</a></li>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/birds/">Birds</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <h1>Enhancing Birdwatching with AI Technology</h1>
+      <p class="page-subtitle">Live streaming + machine learning for backyard bird identification</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/articles/">Articles</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Birdwatching &amp; AI</span>
+      </div>
+
+      <div class="prose">
+        <div class="article-meta">
+          <time datetime="2024-04-25">April 25, 2024</time>
+          <span>by Benjamin Townsend</span>
+        </div>
+
+        <p>
+          Birdwatching has been a long-time hobby of mine, but I've found that modern life often makes
+          it difficult to find the time to watch, identify, and catalog the birds that visit my yard.
+          The patience — and presence — required to spot new and rare species often conflicts with not
+          only my busy work schedule but also my ADHD. However, thanks to advances in technology, I've
+          found a way to enjoy this activity more easily.
+        </p>
+        <p>
+          I've embarked on a project that combines my passion for birdwatching with my skills in
+          technology, resulting in a live-streamed bird camera that anyone can access online.
+          Here's how I did it.
+        </p>
+
+        <h2>Camera Setup</h2>
+
+        <figure style="margin:1.5rem 0;">
+          <a href="../../media/Bird%20Cam%204-24-2024%2C%203-56-49%20PM.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="../../media/Bird%20Cam%204-24-2024%2C%203-56-49%20PM.jpg"
+                 alt="Bird camera view of backyard feeders"
+                 style="border-radius:6px; border:1px solid var(--color-border);">
+          </a>
+          <figcaption style="text-align:center; font-size:.85rem; color:var(--color-text-secondary); margin-top:.5rem;">The Reolink RLC-822A capturing the bird feeders in 4K.</figcaption>
+        </figure>
+
+        <p>
+          At the heart of my setup is the
+          <a href="https://a.co/d/1EGLno5" target="_blank" rel="noopener noreferrer">Reolink RLC-822A</a>,
+          a 4K dome camera that boasts impressive features suitable for capturing the finest details of
+          backyard bird activity. This camera offers high resolution, optical zoom, auto-focus, and a
+          wide-angle lens — an ideal choice for monitoring bird feeders, a bird bath, and surrounding
+          bushes. The ability to capture high-quality audio is another plus, enabling viewers to hear
+          the birds as well as see them.
+        </p>
+        <p>
+          I mounted the camera to weather-treated wood on a pole near the feeders and ran Category 6
+          outdoor/direct-burial cable from my POE switch. The POE connection both powers the camera
+          and provides network access. I assigned the camera a static IP to ensure that other software
+          in the project can consistently access its RTSP feed. Reolink publishes a helpful
+          <a href="https://support.reolink.com/hc/en-us/articles/900000630706-Introduction-to-RTSP/" target="_blank" rel="noopener noreferrer">article on RTSP URLs</a>
+          that made integration straightforward.
+        </p>
+
+        <h2>Setting Up the Live Stream</h2>
+        <p>
+          To share the diversity of bird species visiting my yard with the world, I use
+          <a href="https://docs.datarhei.com/restreamer/getting-started/quick-start" target="_blank" rel="noopener noreferrer">datarhei Restreamer</a>.
+          This open-source software streams the live feed from the camera directly to my website and
+          YouTube channel. Running on a dedicated Docker virtual machine within my Proxmox cluster
+          and managed via Portainer, Restreamer makes continuous streaming effortless. You can catch
+          the live action on my
+          <a href="https://www.youtube.com/@MrBenjamintownsend/streams" target="_blank" rel="noopener noreferrer">YouTube channel</a>
+          or by visiting <a href="https://live.bentownsend.com" target="_blank" rel="noopener noreferrer">live.bentownsend.com</a>.
+        </p>
+
+        <h2>Intelligent Audio Analysis with BirdNET-Pi</h2>
+
+        <figure style="margin:1.5rem 0;">
+          <a href="../../media/birdnet1.png" target="_blank" rel="noopener noreferrer">
+            <img src="../../media/birdnet1.png"
+                 alt="BirdNET-Pi web interface showing identified bird species"
+                 style="border-radius:6px; border:1px solid var(--color-border);">
+          </a>
+          <figcaption style="text-align:center; font-size:.85rem; color:var(--color-text-secondary); margin-top:.5rem;">The BirdNET-Pi web interface with real-time species identification.</figcaption>
+        </figure>
+
+        <p>
+          One of the key components is
+          <a href="https://github.com/MatthewBCooke/BirdNET-Pi" target="_blank" rel="noopener noreferrer">BirdNET-Pi</a>,
+          a tool that leverages artificial intelligence to recognize and identify bird species based on
+          their calls. This software employs machine learning models originally developed by researchers
+          at Cornell University — not far from where I live — adding a local touch while utilizing
+          world-class research.
+        </p>
+        <p>
+          Typically BirdNET-Pi runs on a Raspberry Pi, but I opted to deploy it on a Linux Container
+          (LXC) on a Proxmox node, directly analyzing audio streams captured by the Reolink camera.
+          The software processes audio in small, manageable segments and uses a trained AI model to
+          detect and identify bird species. The accuracy is impressive across a wide range of calls.
+        </p>
+        <p>
+          Results are displayed through a user-friendly web interface publicly accessible at
+          <a href="https://birds.bentownsend.com" target="_blank" rel="noopener noreferrer">birds.bentownsend.com</a>.
+          This interface presents a real-time log of identified species, offering bird enthusiasts and
+          researchers a valuable resource for observing the avian diversity in my area.
+        </p>
+
+        <figure style="margin:1.5rem 0;">
+          <a href="../../media/newplot.png" target="_blank" rel="noopener noreferrer">
+            <img src="../../media/newplot.png"
+                 alt="Chart depicting bird call frequency over time"
+                 style="border-radius:6px; border:1px solid var(--color-border);">
+          </a>
+          <figcaption style="text-align:center; font-size:.85rem; color:var(--color-text-secondary); margin-top:.5rem;">Chart depicting heard bird calls over time, generated by BirdNET-Pi.</figcaption>
+        </figure>
+
+        <h2>Putting It All Together</h2>
+        <p>
+          This project merges several technologies — 4K IP camera, RTSP streaming, Docker containers
+          on Proxmox, Cloudflare Tunnels for public access, and AI machine learning — into a seamless
+          backyard birdwatching experience. It solves a personal problem (finding time and patience
+          to birdwatch) while producing something genuinely useful for anyone curious about the birds
+          of Central New York.
+        </p>
+        <p>
+          Check out the <a href="/birds/">Birds section</a> of this site for photos and field notes
+          on specific species I've spotted, and visit
+          <a href="https://live.bentownsend.com" target="_blank" rel="noopener noreferrer">live.bentownsend.com</a>
+          to watch the live feed.
+        </p>
+
+        <div class="tag-list">
+          <span class="tag">Birdwatching</span>
+          <span class="tag">Technology</span>
+          <span class="tag">Live Streaming</span>
+          <span class="tag">Wildlife</span>
+          <span class="tag">Artificial Intelligence</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">BirdNET-Pi</span>
+          <span class="tag">Reolink Camera</span>
+          <span class="tag">Backyard Birds</span>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--color-border);">
+        <a href="/articles/" class="btn btn-outline">← Back to Articles</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2024 Benjamin Townsend &mdash; <a href="mailto:hello@dispatchdataworks.com">hello@dispatchdataworks.com</a></p>
+    <p>
+      <a href="https://github.com/benjaminarthurt" rel="noopener">GitHub</a> &middot;
+      <a href="https://www.linkedin.com/in/benjamintownsend" rel="noopener">LinkedIn</a> &middot;
+      <a href="https://www.youtube.com/@MrBenjamintownsend" rel="noopener">YouTube</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../../js/main.js"></script>
+</body>
+</html>

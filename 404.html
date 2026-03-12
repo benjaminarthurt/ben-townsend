@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Benjamin Townsend</title>
+  <meta name="description" content="The page you're looking for could not be found. It may have moved to a new URL.">
+  <link rel="canonical" href="https://bentownsend.com/404.html">
+  <link rel="stylesheet" href="/css/main.css">
+  <script>
+    // Inline redirect logic for legacy Drupal URLs
+    (function () {
+      'use strict';
+      var path = window.location.pathname;
+
+      var nodeMap = {
+        '/node/13': '/articles/birdwatching-ai/',
+        '/node/14': '/articles/home-labbing/',
+        '/article/enhancing-birdwatching-ai-technology-13': '/articles/birdwatching-ai/',
+        '/article/home-labbing-14': '/articles/home-labbing/'
+      };
+
+      var taxonomyMap = {
+        '/taxonomy/term/37': '/birds/blue-jay/',
+        '/taxonomy/term/34': '/birds/hairy-woodpecker/',
+        '/taxonomy/term/36': '/birds/white-breasted-nuthatch/'
+      };
+
+      var birdMap = {
+        '/birds/blue-jay': '/birds/blue-jay/',
+        '/birds/male-hairy-woodpecker': '/birds/hairy-woodpecker/',
+        '/birds/white-breasted-nuthatch': '/birds/white-breasted-nuthatch/'
+      };
+
+      if (nodeMap[path])     { window.location.replace(nodeMap[path]);     return; }
+      if (taxonomyMap[path]) { window.location.replace(taxonomyMap[path]); return; }
+      if (birdMap[path])     { window.location.replace(birdMap[path]);     return; }
+
+      if (/^\/node\/\d+/.test(path))         { window.location.replace('/archive/'); return; }
+      if (/^\/taxonomy\/term\/\d+/.test(path)) { window.location.replace('/archive/'); return; }
+      if (/^\/article\//.test(path))          { window.location.replace('/articles/'); return; }
+    })();
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-brand">Benjamin Townsend</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/cv/">CV</a></li>
+        <li><a href="/consulting/">Consulting</a></li>
+        <li><a href="/articles/">Articles</a></li>
+        <li><a href="/birds/">Birds</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="error-page">
+        <div class="error-code">404</div>
+        <h2>Page Not Found</h2>
+        <p>
+          The page you're looking for doesn't exist or has moved to a new URL.
+          If you followed an old link, it may have been part of the previous Drupal site.
+        </p>
+        <div class="error-links">
+          <a href="/" class="btn btn-primary">Go Home</a>
+          <a href="/articles/" class="btn btn-outline">Articles</a>
+          <a href="/birds/" class="btn btn-outline">Birds</a>
+          <a href="/consulting/" class="btn btn-outline">Consulting</a>
+          <a href="/archive/" class="btn btn-outline">Legacy Archive</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2024 Benjamin Townsend &mdash; <a href="mailto:hello@dispatchdataworks.com">hello@dispatchdataworks.com</a></p>
+    <p>
+      <a href="https://github.com/benjaminarthurt" rel="noopener">GitHub</a> &middot;
+      <a href="https://www.linkedin.com/in/benjamintownsend" rel="noopener">LinkedIn</a> &middot;
+      <a href="https://www.youtube.com/@MrBenjamintownsend" rel="noopener">YouTube</a>
+    </p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
