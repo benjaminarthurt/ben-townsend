@@ -7,7 +7,7 @@
 **Consulting & Software Development**
 
 📞 (315) 310-4999  
-📧 [hello@dispatchdataworks.com](mailto:hello@dispatchdataworks.com)
+📧 [benjamin@bentownsend.com](mailto:benjamin@bentownsend.com)
 
 ---
 
@@ -43,4 +43,4 @@ Our designs and applications are modern, user-friendly, responsive, and accessib
 
 ---
 
-**Ready to transform your technology?** [Contact us to discuss your project](mailto:hello@dispatchdataworks.com)
+**Ready to transform your technology?** [Contact us to discuss your project](mailto:benjamin@bentownsend.com)

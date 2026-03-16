@@ -27,7 +27,7 @@ Static content archive of bentownsend.com with updated company information.
 - **Old company name**: Townsend Consulting Service
 - **New company name**: Dispatch Dataworks LLC
 - **Updated services**: Added software development, data integration, consulting details
-- **Updated contact**: hello@dispatchdataworks.com
+- **Updated contact**: benjamin@bentownsend.com
 - **New service offerings**: Custom applications, data pipelines, system architecture, etc.
 
 ### Cleanup
