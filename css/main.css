@@ -387,6 +387,11 @@ section {
   text-decoration: none;
 }
 
+.btn-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;
