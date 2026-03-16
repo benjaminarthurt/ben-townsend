@@ -881,16 +881,6 @@ section {
   border: 0;
 }
 
-/* External link indicator */
-a[target="_blank"]::after {
-  content: ' ↗';
-  font-size: .75em;
-  opacity: .7;
-}
-
-.social-links a[target="_blank"]::after {
-  content: none;
-}
 
 /* ============================================================
    Responsive — Tablet (768px)
