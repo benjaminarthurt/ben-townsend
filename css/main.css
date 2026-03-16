@@ -888,6 +888,10 @@ a[target="_blank"]::after {
   opacity: .7;
 }
 
+.social-links a[target="_blank"]::after {
+  content: none;
+}
+
 /* ============================================================
    Responsive — Tablet (768px)
    ============================================================ */
