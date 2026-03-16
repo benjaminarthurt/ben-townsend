@@ -272,7 +272,7 @@ Benjamin Townsend    [Nav: Home | About | CV | Consulting | Articles | Birds]
 
 | Column 1 | Column 2 |
 |----------|----------|
-| Contact: hello@dispatchdataworks.com | Social: GitHub, Twitter/X, LinkedIn |
+| Contact: benjamin@bentownsend.com | Social: GitHub, Twitter/X, LinkedIn |
 | Copyright © 2026 Benjamin Townsend | Links: Privacy, Colophon |
 
 ### 5.5 Reusable Components
@@ -481,7 +481,7 @@ Prevents duplicate-content issues.
   "url": "https://bentownsend.com/",
   "jobTitle": "Software Developer & Consultant",
   "worksFor": { "@type": "Organization", "name": "Dispatch Dataworks LLC" },
-  "email": "hello@dispatchdataworks.com",
+  "email": "benjamin@bentownsend.com",
   "sameAs": [
     "https://github.com/benjaminarthurt",
     "https://www.linkedin.com/in/benjamin-townsend"
@@ -497,7 +497,7 @@ Prevents duplicate-content issues.
   "name": "Dispatch Dataworks LLC",
   "url": "https://dispatchdataworks.com/",
   "founder": { "@type": "Person", "name": "Benjamin Townsend" },
-  "email": "hello@dispatchdataworks.com",
+  "email": "benjamin@bentownsend.com",
   "contactPoint": { "@type": "ContactPoint", "contactType": "customer service" }
 }
 ```
