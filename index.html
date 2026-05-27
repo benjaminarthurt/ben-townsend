@@ -1,155 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/media/apple-touch-icon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Benjamin Townsend — Software &amp; Consulting</title>
-  <meta name="description" content="Benjamin Townsend — technologist with 25+ years of IT experience, software development, and consulting. Founder of Dispatch Dataworks LLC.">
-  <meta property="og:title" content="Benjamin Townsend — Software &amp; Consulting">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Benjamin Townsend | LCARS Portal</title>
+  <meta name="description" content="Benjamin Townsend, software consultant and technologist. LCARS-styled homepage for consulting, articles, and backyard birdwatching.">
+  <meta property="og:title" content="Benjamin Townsend | LCARS Portal">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bentownsend.com/">
   <meta property="og:image" content="https://bentownsend.com/media/og-default.jpg">
   <meta property="og:image:alt" content="Dispatch Dataworks LLC Logo">
-  <meta property="og:description" content="Benjamin Townsend — technologist with 25+ years of IT experience, software development, and consulting.">
+  <meta property="og:description" content="LCARS homepage for Benjamin Townsend, software consulting and technical projects.">
   <link rel="canonical" href="https://bentownsend.com/">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/media/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="topbar">
+    <div class="cap" aria-hidden="true"></div>
+    <div class="title">
+      <p>DISPATCH DATAWORKS // LCARS ACCESS NODE</p>
+      <h1>BENJAMIN <strong>TOWNSEND</strong></h1>
+      <span>SOFTWARE APPLICATIONS, SECURITY, AND CONSULTING</span>
+    </div>
+    <div class="status">
+      <label>LOCATION <strong>MEXICO, NY</strong></label>
+      <label>EXPERIENCE <b>25+ YEARS</b></label>
+    </div>
+  </header>
 
-<header class="site-header">
-  <div class="container">
-    <a href="/" class="site-brand">Benjamin Townsend</a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav" id="site-nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/cv/">CV</a></li>
-        <li><a href="/consulting/">Consulting</a></li>
-        <li><a href="/articles/">Articles</a></li>
-        <li><a href="/birds/">Birds</a></li>
-        <li><a href="/starship/">USS Townsend - NCC 75234</a></li>
-      </ul>
+  <div class="shell">
+    <nav aria-label="Primary">
+      <a class="tab active" href="/">01 HOME</a>
+      <a class="tab amber" href="/about/">02 ABOUT</a>
+      <a class="tab violet" href="/cv/">03 CV</a>
+      <a class="tab" href="/consulting/">04 CONSULTING</a>
+      <a class="tab blue" href="/articles/">05 ARTICLES</a>
+      <a class="tab rose" href="/birds/">06 BIRDS</a>
+      <a class="tab amber" href="/starship/">07 STARSHIP</a>
+      <div class="uplink">
+        <small>SITE STATUS</small>
+        <strong>ONLINE</strong>
+        <i aria-hidden="true"></i>
+        <small><a href="/">VIEW CLASSIC HOME</a></small>
+      </div>
     </nav>
+
+    <main>
+      <section id="overview" class="panel hero">
+        <div class="intro">
+          <p class="tag">PROFILE // PRIMARY RECORD</p>
+          <h2>Software &amp; Consulting</h2>
+          <p>
+            Technologist, consultant, and amateur naturalist based in Mexico, NY.
+            25+ years of experience building software, securing systems, and solving hard problems.
+          </p>
+          <div class="metrics">
+            <a href="/consulting/">CONSULTING SERVICES <small>DISPATCH DATAWORKS</small></a>
+            <span aria-label="Live Bird Stream offline">LIVE BIRD STREAM OFFLINE <small>PRIVACY PROTECTION ACTIVE</small></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="reveal">
+        <header class="section">
+          <span aria-hidden="true"></span>
+          <div>
+            <small>SECTION 02</small>
+            <h2>ABOUT BENJAMIN</h2>
+          </div>
+        </header>
+        <article class="panel text-block">
+          <p>
+            I am a technologist with over 25 years of experience in the IT industry, from desktop support
+            and network administration to software development, cyber security, and team leadership.
+            Currently serving as a Software Applications &amp; Security Specialist at Helio Health while also
+            running <strong>Dispatch Dataworks LLC</strong>, my independent consulting agency.
+          </p>
+          <p>
+            When I am not working I am an amateur radio operator (Extra Class), home automation enthusiast,
+            photographer, and devoted backyard birdwatcher.
+          </p>
+          <a class="btn-link" href="/about/">LEARN MORE ABOUT ME</a>
+        </article>
+      </section>
+
+      <section id="work" class="reveal">
+        <header class="section purple">
+          <span aria-hidden="true"></span>
+          <div>
+            <small>SECTION 03</small>
+            <h2>WHAT I DO</h2>
+          </div>
+        </header>
+        <div class="cards">
+          <article class="card panel">
+            <small>01</small>
+            <h3>CONSULTING</h3>
+            <p>
+              Custom software development, data integration, and strategic technology consulting through
+              Dispatch Dataworks LLC. Let us build something that actually fits your workflow.
+            </p>
+            <a href="/consulting/">DISPATCH DATAWORKS -></a>
+          </article>
+
+          <article class="card panel">
+            <small>02</small>
+            <h3>ARTICLES</h3>
+            <p>
+              Deep-dives into my home lab setup, AI-powered birdwatching, live streaming, and other
+              tech projects I am working on.
+            </p>
+            <a href="/articles/">READ ARTICLES -></a>
+          </article>
+
+          <article class="card panel">
+            <small>03</small>
+            <h3>BIRDS</h3>
+            <p>
+              A photo journal of the birds visiting my backyard feeders, complete with a live camera
+              stream and AI-powered species identification via BirdNET-Pi.
+            </p>
+            <a href="/birds/">SEE THE BIRDS -></a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal">
+        <header class="section rose">
+          <span aria-hidden="true"></span>
+          <div>
+            <small>SECTION 04</small>
+            <h2>PROJECT CONTACT</h2>
+          </div>
+        </header>
+        <article class="panel cta">
+          <h3>LET US DISCUSS YOUR PROJECT</h3>
+          <p>
+            Looking for a technology partner who delivers custom solutions and not off-the-shelf guesses?
+            Reach out and let us talk about what we can build together.
+          </p>
+          <a class="email" href="mailto:benjamin@bentownsend.com">benjamin@bentownsend.com</a>
+        </article>
+      </section>
+    </main>
   </div>
-</header>
 
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Benjamin Townsend</h1>
-      <p class="tagline">Software &amp; Consulting</p>
-      <p class="lead">
-        Technologist, consultant, and amateur naturalist based in Palermo, NY.
-        25+ years of experience building software, securing systems, and solving hard problems.
-      </p>
-      <div class="hero-actions">
-        <a href="/consulting/" class="btn btn-primary">Consulting Services</a>
-        <span class="btn btn-secondary btn-disabled" title="Live camera access has been disabled for privacy reasons">🐦 Live Bird Stream (offline)</span>
-      </div>
+  <footer>
+    <span aria-hidden="true"></span>
+    <p>&copy; 2024-2026 Benjamin Townsend | <a href="mailto:benjamin@bentownsend.com">benjamin@bentownsend.com</a></p>
+    <div class="social-links" aria-label="Social links">
+      <a href="https://drupal.org/u/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/drupal-32.png" alt="Drupal" width="28" height="28"></a>
+      <a href="https://about.me/ben.townsend" target="_blank" rel="noopener noreferrer"><img src="/media/aboutme-32_0.png" alt="About.me" width="28" height="28"></a>
+      <a href="https://twitter.com/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/twitter-32.png" alt="Twitter" width="28" height="28"></a>
+      <a href="https://www.facebook.com/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/facebook-32.png" alt="Facebook" width="28" height="28"></a>
+      <a href="mailto:benjamin@bentownsend.com"><img src="/media/email-32.png" alt="Email" width="28" height="28"></a>
+      <a href="https://github.com/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/github-32.png" alt="GitHub" width="28" height="28"></a>
+      <a href="https://www.linkedin.com/in/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/linkedin-32.png" alt="LinkedIn" width="28" height="28"></a>
+      <a href="https://www.pinterest.com/benak2x/" target="_blank" rel="noopener noreferrer"><img src="/media/pinterest-32.png" alt="Pinterest" width="28" height="28"></a>
+      <a href="https://www.reddit.com/user/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/reddit-32.png" alt="Reddit" width="28" height="28"></a>
+      <a href="http://stackexchange.com/users/4848775/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/stackoverflow-32.png" alt="Stack Exchange" width="28" height="28"></a>
+      <a href="https://vimeo.com/user36517865" target="_blank" rel="noopener noreferrer"><img src="/media/vimeo-32.png" alt="Vimeo" width="28" height="28"></a>
+      <a href="https://www.youtube.com/user/MrBenjamintownsend" target="_blank" rel="noopener noreferrer"><img src="/media/youtube-32.png" alt="YouTube" width="28" height="28"></a>
     </div>
-  </section>
-
-  <!-- Bio snippet -->
-  <section style="background: var(--color-surface-alt); padding: 2.5rem 0;">
-    <div class="container">
-      <div style="max-width: 680px; margin: 0 auto; text-align: center;">
-        <h2>Hi, I'm Benjamin</h2>
-        <p>
-          I'm a technologist with over 25 years of experience in the IT industry — from desktop support
-          and network administration to software development, cyber security, and team leadership.
-          Currently serving as a Software Applications &amp; Security Specialist at Helio Health while also
-          running <strong>Dispatch Dataworks LLC</strong>, my independent consulting agency.
-        </p>
-        <p>
-          When I'm not working I'm an amateur radio operator (Extra Class), home automation enthusiast,
-          photographer, and devoted backyard birdwatcher.
-        </p>
-        <a href="/about/" class="btn btn-outline">Learn More About Me</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured cards -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">What I Do</h2>
-      <div class="card-grid">
-
-        <div class="card">
-          <div class="card-icon">💼</div>
-          <h3>Consulting</h3>
-          <p>
-            Custom software development, data integration, and strategic technology consulting through
-            Dispatch Dataworks LLC. Let's build something that actually fits your workflow.
-          </p>
-          <a href="/consulting/" class="card-link">Dispatch Dataworks →</a>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">📝</div>
-          <h3>Articles</h3>
-          <p>
-            Deep-dives into my home lab setup, AI-powered birdwatching, live streaming, and other
-            tech projects I'm working on.
-          </p>
-          <a href="/articles/" class="card-link">Read Articles →</a>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🐦</div>
-          <h3>Birds</h3>
-          <p>
-            A photo journal of the birds visiting my backyard feeders, complete with a live camera
-            stream and AI-powered species identification via BirdNET-Pi.
-          </p>
-          <a href="/birds/" class="card-link">See the Birds →</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section style="padding-bottom: 3.5rem;">
-    <div class="container">
-      <div class="cta-box">
-        <h2>Let's Discuss Your Project</h2>
-        <p>
-          Looking for a technology partner who delivers custom solutions — not off-the-shelf guesses?
-          Reach out and let's talk about what we can build together.
-        </p>
-        <a href="mailto:benjamin@bentownsend.com" class="btn btn-primary">benjamin@bentownsend.com</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; 2024–2026 Benjamin Townsend &mdash; <a href="mailto:benjamin@bentownsend.com">benjamin@bentownsend.com</a></p>
-    <p class="social-links">
-      <a href="https://drupal.org/u/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/drupal-32.png" alt="Drupal" width="32" height="32"></a>
-      <a href="https://about.me/ben.townsend" target="_blank" rel="noopener noreferrer"><img src="/media/aboutme-32_0.png" alt="About.me" width="32" height="32"></a>
-      <a href="https://twitter.com/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/twitter-32.png" alt="Twitter" width="32" height="32"></a>
-      <a href="https://www.facebook.com/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/facebook-32.png" alt="Facebook" width="32" height="32"></a>
-      <a href="mailto:benjamin@bentownsend.com"><img src="/media/email-32.png" alt="Email" width="32" height="32"></a>
-      <a href="https://github.com/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/github-32.png" alt="GitHub" width="32" height="32"></a>
-      <a href="https://www.linkedin.com/in/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/linkedin-32.png" alt="LinkedIn" width="32" height="32"></a>
-      <a href="https://www.pinterest.com/benak2x/" target="_blank" rel="noopener noreferrer"><img src="/media/pinterest-32.png" alt="Pinterest" width="32" height="32"></a>
-      <a href="https://www.reddit.com/user/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/reddit-32.png" alt="Reddit" width="32" height="32"></a>
-      <a href="http://stackexchange.com/users/4848775/benjaminarthurt" target="_blank" rel="noopener noreferrer"><img src="/media/stackoverflow-32.png" alt="Stack Exchange" width="32" height="32"></a>
-      <a href="https://vimeo.com/user36517865" target="_blank" rel="noopener noreferrer"><img src="/media/vimeo-32.png" alt="Vimeo" width="32" height="32"></a>
-      <a href="https://www.youtube.com/user/MrBenjamintownsend" target="_blank" rel="noopener noreferrer"><img src="/media/youtube-32.png" alt="YouTube" width="32" height="32"></a>
-    </p>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
+  </footer>
 </body>
 </html>

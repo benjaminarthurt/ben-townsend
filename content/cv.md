@@ -1,7 +1,7 @@
 # Source: https://bentownsend.com/cv
 
 ### Benjamin A. Townsend
-Palermo, NY 13069
+Mexico, NY 13114
 **SUMMARY**
 Experienced IT professional specializing in software applications and cyber security within the healthcare sector. Expert in leading critical initiatives such as migrating organizational computer management to Microsoft Intune and implementing cloud-first automations. Successfully developed solutions to enhance security against phishing threats and utilized PowerShell scripting to manage Azure environments and automate processes efficiently. Proficient in Microsoft Defender for cloud, identity, and endpoint management. Recently led projects involving Intune policy configuration, Autopilot deployment, and custom BCDR solutions to ensure reliable and secure access to patient care data. Seeking opportunities to further modernize IT infrastructure in healthcare, focusing on cloud technologies to enhance the usability of software and support patient care. Committed to fostering a collaborative environment that drives effective solutions aligned with strategic objectives.
 **PROFESSIONAL EXPERIENCE**
