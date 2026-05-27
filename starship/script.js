@@ -8,6 +8,11 @@
   const navTabs = document.querySelectorAll('.tab[data-id]');
   const informationControls = document.querySelectorAll('[data-info]');
   const systemButtons = document.querySelectorAll('.system[data-system]');
+  const roomOptions = document.querySelectorAll('.room-option[data-room]');
+  const interiorImage = document.getElementById('interiorImage');
+  const interiorCaption = document.getElementById('interiorCaption');
+  const engineeringButtons = document.querySelectorAll('.eng-system[data-engineering]');
+  const engineeringCaption = document.getElementById('engineeringCaption');
   const diagnosticButton = document.getElementById('diag');
   const diagnosticResult = document.getElementById('result');
   const restartButton = document.getElementById('restart');
@@ -43,6 +48,33 @@
         ['OUTPUT', '0.03%']
       ]
     }
+  };
+
+  const roomData = {
+    bridge: {
+      label: 'MAIN BRIDGE',
+      src: 'assets/bridge.png',
+      alt: 'Main bridge of the USS Townsend',
+      caption: 'DECK 01 // MAIN BRIDGE // COMMAND OPERATIONS ACTIVE'
+    },
+    tenforward: {
+      label: 'TEN-FORWARD',
+      src: 'assets/ten-forward.png',
+      alt: 'Ten-Forward lounge aboard the USS Townsend',
+      caption: 'DECK 04 // TEN-FORWARD // LOUNGE OPERATIONS NORMAL'
+    },
+    accommodations: {
+      label: 'ACCOMMODATIONS',
+      src: 'assets/crew-accommodations.png',
+      alt: 'Crew accommodations aboard the USS Townsend',
+      caption: 'CREW DECK // ACCOMMODATIONS // LIFE SUPPORT STABLE'
+    }
+  };
+
+  const engineeringData = {
+    warp: 'M/ARA WARP CORE // PRIMARY REACTION CHAMBER ONLINE',
+    plasma: 'EPS POWER NETWORK // PLASMA CONDUITS BALANCED AT 99.4%',
+    defense: 'TACTICAL POWER GRID // SHIELD AND PHASER ROUTING VERIFIED'
   };
 
   function setDisplay(message) {
@@ -124,11 +156,62 @@
     setDisplay(`SYSTEM QUERY // ${record.title} // RECORD LOADED`);
   }
 
+  function renderInteriorRoom(key, options = {}) {
+    const { persist = false, announce = false } = options;
+    const record = roomData[key];
+    if (!record || !interiorImage || !interiorCaption) return;
+    interiorImage.src = record.src;
+    interiorImage.alt = record.alt;
+    interiorCaption.textContent = record.caption;
+    if (persist) {
+      roomOptions.forEach((room) => room.classList.toggle('selected', room.dataset.room === key));
+    }
+    if (announce) setDisplay(`INTERIOR FEED // ${record.label} // VISUAL CHANNEL OPEN`);
+  }
+
+  function renderEngineering(key) {
+    const caption = engineeringData[key];
+    if (!caption || !engineeringCaption) return;
+    engineeringCaption.textContent = caption;
+    setDisplay(`ENGINEERING QUERY // ${caption}`);
+  }
+
   systemButtons.forEach((button) => {
     button.addEventListener('click', () => {
       systemButtons.forEach((item) => item.classList.remove('selected'));
       button.classList.add('selected');
       renderSystem(button.dataset.system);
+    });
+  });
+
+  if (roomOptions.length && interiorImage && interiorCaption) {
+    let selectedRoom = 'bridge';
+    renderInteriorRoom(selectedRoom, { persist: true });
+    roomOptions.forEach((room) => {
+      const roomKey = room.dataset.room;
+      room.addEventListener('mouseenter', () => renderInteriorRoom(roomKey, { announce: true }));
+      room.addEventListener('focus', () => renderInteriorRoom(roomKey, { announce: true }));
+      room.addEventListener('mouseleave', () => renderInteriorRoom(selectedRoom));
+      room.addEventListener('blur', () => renderInteriorRoom(selectedRoom));
+      room.addEventListener('click', () => {
+        selectedRoom = roomKey;
+        renderInteriorRoom(roomKey, { persist: true, announce: true });
+      });
+      room.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          selectedRoom = roomKey;
+          renderInteriorRoom(roomKey, { persist: true, announce: true });
+        }
+      });
+    });
+  }
+
+  engineeringButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      engineeringButtons.forEach((item) => item.classList.remove('selected'));
+      button.classList.add('selected');
+      renderEngineering(button.dataset.engineering);
     });
   });
 
