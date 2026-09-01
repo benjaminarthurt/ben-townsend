@@ -338,6 +338,7 @@ main {
 
 .text-block {
   padding: 25px;
+  overflow: auto;
 }
 
 .text-block p {
@@ -346,13 +347,14 @@ main {
 }
 
 .profile-image {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  object-position: top;
+  float: left;
+  width: 25%;
+  max-width: 25%;
+  height: auto;
+  object-fit: contain;
   border-radius: 8px;
   border: 1px solid #2b3146;
-  margin-bottom: 18px;
+  margin: 0 18px 12px 0;
 }
 
 .logo-fit {
@@ -639,6 +641,16 @@ footer > p a {
 }
 
 @media (max-width: 680px) {
+  .profile-image {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    object-position: top;
+    margin: 0 0 18px;
+  }
+
   .topbar {
     height: 110px;
     grid-template-columns: 35px 1fr;
