@@ -349,7 +349,6 @@ main {
 .profile-image {
   float: left;
   width: 25%;
-  max-width: 25%;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -644,7 +643,6 @@ footer > p a {
   .profile-image {
     float: none;
     width: 100%;
-    max-width: 100%;
     max-height: 380px;
     object-fit: cover;
     object-position: top;
