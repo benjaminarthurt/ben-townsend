@@ -302,7 +302,7 @@ main {
 }
 
 .section {
-  height: 86px;
+  min-height: 86px;
   display: flex;
   margin: 24px 0 15px;
 }
@@ -323,7 +323,9 @@ main {
 
 .section h2 {
   font-size: 34px;
+  line-height: 1.1;
   margin: 4px 0;
+  overflow-wrap: break-word;
 }
 
 .section.purple > span,
