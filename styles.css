@@ -575,6 +575,15 @@ main {
   margin-top: 8px;
 }
 
+.prose code,
+.card code {
+  font: 0.92em var(--mono);
+  color: var(--gold);
+  background: #101624;
+  padding: 1px 5px;
+  overflow-wrap: anywhere;
+}
+
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
